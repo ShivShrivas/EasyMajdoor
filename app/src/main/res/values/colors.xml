@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#FA7F46</color>
+    <color name="colorPrimaryDark">#FA7F46</color>
+    <color name="colorAccent">#2E2A2B</color>
+
+    <color name="colorPrimary_tranperent">#FA7F46</color>
+    <color name="colorAccent_transperent">#040303</color>
+    <color name="orange_dark">#FF5100</color>
+    <color name="light_orange_progress">#E9F1B97F</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
