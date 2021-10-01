@@ -1,30 +1,47 @@
 package com.app.easymajdoor.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 
 import com.app.easymajdoor.MainActivity;
 import com.app.easymajdoor.R;
+import com.daimajia.androidanimations.library.Techniques;
+import com.viksaa.sssplash.lib.activity.AwesomeSplash;
+import com.viksaa.sssplash.lib.cnst.Flags;
+import com.viksaa.sssplash.lib.model.ConfigSplash;
 
-public class Splash_Screen extends AppCompatActivity {
+public class Splash_Screen extends AwesomeSplash {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void initSplash(ConfigSplash configSplash) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_splash_screen);
+        configSplash.setBackgroundColor(R.color.black);
+        configSplash.setAnimCircularRevealDuration(3000);
+        configSplash.setRevealFlagX(Flags.REVEAL_LEFT);
+        configSplash.setRevealFlagY(Flags.REVEAL_BOTTOM);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        configSplash.setLogoSplash(R.drawable.logo);
+        configSplash.setAnimLogoSplashDuration(5000);
+        configSplash.setAnimLogoSplashTechnique(Techniques.DropOut);
 
-                startActivity(new Intent(Splash_Screen.this, MainActivity.class));
-                finish();
-            }
+        configSplash.setTitleSplash(" ");
 
-        }, 5000);
+
+
+    }
+
+    @Override
+    public void animationsFinished() {
+        Intent intent = new Intent(Splash_Screen.this,MainActivity.class);
+        startActivity(intent);
+
     }
 }
