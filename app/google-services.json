@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "730218007963",
+    "project_id": "easy-mazdoor-9aa17",
+    "storage_bucket": "easy-mazdoor-9aa17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730218007963:android:863b1805e4acfcb21c653e",
+        "android_client_info": {
+          "package_name": "com.app.easymajdoor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730218007963-7vb8os4koomchrhtne9f6972qp2c5j4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAToBEeop2oQlGYbvj8SXB30vY1uSbD_xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730218007963-7vb8os4koomchrhtne9f6972qp2c5j4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
