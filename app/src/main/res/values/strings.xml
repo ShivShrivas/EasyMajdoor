@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Easy Majdoor</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_phno">Please enter your mobile number</string>
+    <string name="_91">+91</string>
+    <string name="next">Next</string>
 </resources>
