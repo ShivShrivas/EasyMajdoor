@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextPhone2"
+        android:id="@+id/phno_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -71,14 +71,15 @@
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextPhone2"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone2" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/phno_et"
+        app:layout_constraintStart_toStartOf="@+id/phno_et" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/next_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:enabled="false"
         android:paddingLeft="20dp"
         android:paddingTop="8dp"
         android:paddingRight="20dp"
@@ -86,8 +87,22 @@
         android:text="@string/next"
         android:textSize="18sp"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone2"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+        app:layout_constraintEnd_toEndOf="@+id/phno_et"
+        app:layout_constraintStart_toStartOf="@+id/phno_et"
+        app:layout_constraintTop_toBottomOf="@+id/phno_et" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="24dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/next_btn"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@+id/next_btn"
+        app:layout_constraintTop_toTopOf="@+id/next_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
