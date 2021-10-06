@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -29,6 +30,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+
 
     //Navigation
     def nav_version = "2.3.5"
