@@ -8,5 +8,22 @@
         android:id="@+id/phNoFragment"
         android:name="com.app.easymajdoor.fragments.PhNoFragment"
         android:label="fragment_ph_no"
-        tools:layout="@layout/fragment_ph_no" />
+        tools:layout="@layout/fragment_ph_no" >
+        <action
+            android:id="@+id/action_phNoFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.app.easymajdoor.fragments.OtpFragment"
+        android:label="fragment_otp"
+        tools:layout="@layout/fragment_otp" />
+    <fragment
+        android:id="@+id/googleAuthFragment"
+        android:name="com.app.easymajdoor.fragments.GoogleAuthFragment"
+        android:label="GoogleAuthFragment" >
+        <action
+            android:id="@+id/action_googleAuthFragment_to_phNoFragment"
+            app:destination="@id/phNoFragment" />
+    </fragment>
 </navigation>

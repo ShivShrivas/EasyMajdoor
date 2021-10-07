@@ -18,21 +18,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //handleAuth();
+        handleAuth();
         setContentView(R.layout.activity_main);
-
-        ((BoxedEditText)findViewById(R.id.boxedET)).setBoxETListener(new BoxETListener() {
-            @Override
-            public void onReachedEnd() {
-                GeneralUtils.hideKeyboard(MainActivity.this);
-            }
-
-            @Override
-            public void onChange(boolean isFilled) {
-                Timber.d("filled: %b", isFilled);
-            }
-        });
-
     }
 
     private void handleAuth() {

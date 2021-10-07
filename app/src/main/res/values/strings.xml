@@ -7,4 +7,9 @@
     <string name="next">Next</string>
     <string name="verification_failed">Verification Failed. Try Again</string>
     <string name="_0">0</string>
+    <string name="verify">Verify</string>
+    <string name="please_enter_otp">Please Enter OTP</string>
+    <string name="please_enter_the_otp_that_send_on">Please enter the OTP that is send on %s</string>
+    <string name="resend_otp_in">Resend OTP in %s</string>
+    <string name="sign_in_with_google">Sign-In with Google</string>
 </resources>
