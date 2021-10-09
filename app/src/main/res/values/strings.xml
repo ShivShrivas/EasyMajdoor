@@ -5,4 +5,29 @@
     <string name="enter_phno">Please enter your mobile number</string>
     <string name="_91">+91</string>
     <string name="next">Next</string>
+    <string name="verification_failed">Verification Failed. Try Again</string>
+    <string name="_0">0</string>
+    <string name="verify">Verify</string>
+    <string name="please_enter_otp">Please Enter OTP</string>
+    <string name="please_enter_the_otp_that_send_on">Please enter the OTP that is send on %s</string>
+    <string name="resend_otp_in">Resend OTP in %ds</string>
+    <string name="sign_in_with_google">Sign-In with Google</string>
+    <string name="sign_in_failed">Sign In Failed</string>
+    <string name="resend">Resend</string>
+    <string name="invalid_request">Invalid Request</string>
+    <string name="sms_quota">Sms quota exceeded</string>
+
+    <string name="sign_in_error">SignIn credential failure</string>
+    <string name="invalid_code">Invalid code</string>
+    <string name="sms_quota_exceeded">Sms quota exceeded</string>
+    <string name="number_blocked">Number blocked due to unusual activity</string>
+    <string name="change_your_phone_number">Not your phone number?</string>
+    <string name="instant_verification">Instant Verification done</string>
+    <string name="number_already_taken">This number is already associated with another account</string>
+    <string name="auto_retrieve">Trying to Auto Retrieve</string>
+    <string name="enter_code_manually">Auto Retrieval Timed Out. Enter code manually</string>
+    <string name="unknown_error">An Unknown Error Occurred</string>
+    <string name="sending_otp">Sending OTP</string>
+    <string name="creating_account">Creating Account</string>
+
 </resources>

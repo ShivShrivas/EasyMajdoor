@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BoxedEditText">
+        <attr name="numBoxes" format="integer"/>
+        <attr name="tint" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="isEnabled" format="boolean"/>
+    </declare-styleable>
+    
+</resources>
