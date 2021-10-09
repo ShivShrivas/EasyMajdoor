@@ -158,6 +158,7 @@ public class OtpFragment extends Fragment {
             if (status.status == Status.SUCCESS) {
                 Timber.d("wtf");
                 startActivity(new Intent(requireContext(), MainActivity.class));
+                requireActivity().finish();
             } else if (status.error == AuthRepository.Errors.PHONE_NO_ALREADY_EXISTS) {
                 message.showSnackBar(R.string.number_already_taken);
                 navigator.popBackStack();
@@ -185,14 +186,8 @@ public class OtpFragment extends Fragment {
                 binding.boxedET.setText(code);
             }
             Timber.d("onVerificationCompleted:%s", credential);
-
-            Snackbar.make(binding.getRoot(), R.string.instant_verification, Snackbar.LENGTH_SHORT)
-                    .addCallback(new Snackbar.Callback() {
-                        @Override
-                        public void onDismissed(Snackbar transientBottomBar, int event) {
-                            addDetailsToDb();
-                        }
-                    }).show();
+            addDetailsToDb();
+            message.showSnackBar(R.string.instant_verification);
         }
 
         @Override

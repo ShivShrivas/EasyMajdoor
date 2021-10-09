@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         authStatus.observe(this, auth -> {
             if (auth.data != AuthStatus.AUTH_PH_NO) {
                 startActivity(new Intent(this, AuthActivity.class));
+                finish();
             }
         });
     }

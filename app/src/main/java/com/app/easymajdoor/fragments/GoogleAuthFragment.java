@@ -93,6 +93,7 @@ public class GoogleAuthFragment extends Fragment {
             if (auth.data == AuthStatus.AUTH_PH_NO) {
 
                 startActivity(new Intent(requireContext(), MainActivity.class));
+                requireActivity().finish();
             } else if (auth.data == AuthStatus.AUTH) {
                 navigator.navigate(GoogleAuthFragmentDirections.actionGoogleAuthFragmentToPhNoFragment());
             }
