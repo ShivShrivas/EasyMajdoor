@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/phNoFragment">
+    app:startDestination="@id/googleAuthFragment">
     <fragment
         android:id="@+id/phNoFragment"
         android:name="com.app.easymajdoor.fragments.PhNoFragment"
@@ -17,13 +17,19 @@
         android:id="@+id/otpFragment"
         android:name="com.app.easymajdoor.fragments.OtpFragment"
         android:label="fragment_otp"
-        tools:layout="@layout/fragment_otp" />
+        tools:layout="@layout/fragment_otp" >
+        <argument
+            android:name="number"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/googleAuthFragment"
         android:name="com.app.easymajdoor.fragments.GoogleAuthFragment"
         android:label="GoogleAuthFragment" >
         <action
             android:id="@+id/action_googleAuthFragment_to_phNoFragment"
-            app:destination="@id/phNoFragment" />
+            app:destination="@id/phNoFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

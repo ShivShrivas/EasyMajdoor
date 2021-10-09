@@ -75,7 +75,7 @@
         app:layout_constraintStart_toStartOf="@+id/phno_et" />
 
     <Button
-        android:id="@+id/next_btn"
+        android:id="@+id/sign_in_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -100,9 +100,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/next_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/sign_in_btn"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toEndOf="@+id/next_btn"
-        app:layout_constraintTop_toTopOf="@+id/next_btn" />
+        app:layout_constraintStart_toEndOf="@+id/sign_in_btn"
+        app:layout_constraintTop_toTopOf="@+id/sign_in_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

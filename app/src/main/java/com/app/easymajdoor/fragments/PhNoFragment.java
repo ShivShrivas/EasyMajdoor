@@ -6,9 +6,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import com.app.easymajdoor.R;
 import com.app.easymajdoor.activities.MainActivity;
 import com.app.easymajdoor.databinding.FragmentPhNoBinding;
+import com.app.easymajdoor.auth.AuthRepository;
 import com.app.easymajdoor.utils.GeneralUtils;
 import com.app.easymajdoor.utils.Message;
 import com.app.easymajdoor.utils.SimpleTextWatcher;
@@ -31,14 +33,13 @@ import timber.log.Timber;
 
 public class PhNoFragment extends Fragment {
 
-    private FirebaseAuth mAuth;
-    private Message message;
     private FragmentPhNoBinding binding;
+    private NavController navigator;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth = FirebaseAuth.getInstance();
+        navigator = NavHostFragment.findNavController(this);
     }
 
     @Override
@@ -46,7 +47,6 @@ public class PhNoFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentPhNoBinding.inflate(inflater, container, false);
-        message = new Message(binding.getRoot());
         return binding.getRoot();
     }
 
@@ -55,58 +55,16 @@ public class PhNoFragment extends Fragment {
         binding.phnoEt.addTextChangedListener(new SimpleTextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
-                binding.nextBtn.setEnabled(GeneralUtils.isValidPhNo(s.toString()));
+                binding.signInBtn.setEnabled(GeneralUtils.isValidPhNo(s.toString()));
             }
         });
 
-        binding.nextBtn.setOnClickListener(v -> {
+        binding.signInBtn.setOnClickListener(v -> {
             String phno = "+91" + binding.phnoEt.getText().toString();
             Timber.d("PhNo: %s", phno);
-            startPhoneNumberVerification(phno);
             GeneralUtils.hideKeyboard(requireActivity());
-            setLoading(true);
+            navigator.navigate(PhNoFragmentDirections.actionPhNoFragmentToOtpFragment(phno));
         });
-    }
-
-    private void startPhoneNumberVerification(String phoneNumber) {
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(phoneNumber)
-                        .setTimeout(60L, TimeUnit.SECONDS)
-                        .setActivity(requireActivity())
-                        .setCallbacks(new Callbacks())
-                        .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
-    }
-
-    private void setLoading(boolean isLoading) {
-        binding.progressBar.setVisibility(isLoading ? View.VISIBLE : View.INVISIBLE);
-        binding.nextBtn.setClickable(!isLoading);
-    }
-
-    public class Callbacks extends PhoneAuthProvider.OnVerificationStateChangedCallbacks {
-
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-            setLoading(false);
-            if (mAuth.getCurrentUser() != null) {
-                startActivity(new Intent(requireContext(), MainActivity.class));
-            }
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
-            message.showSnackBar(R.string.verification_failed);
-            setLoading(false);
-        }
-
-        @Override
-        public void onCodeSent(@NonNull String verificationId,
-                               @NonNull PhoneAuthProvider.ForceResendingToken token) {
-            setLoading(false);
-            Timber.d("Verification ID: %s, Resend Token: %s", verificationId, token);
-            // TODO: Navigate to CODE FRAGMENT
-        }
     }
 
 }

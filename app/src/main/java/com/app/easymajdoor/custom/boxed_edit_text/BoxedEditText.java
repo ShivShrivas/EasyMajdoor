@@ -134,8 +134,16 @@ public class BoxedEditText extends LinearLayout {
 
     public void setText(String text) {
         for (int i = 0; i < Math.min(text.length(), numBoxes); i++) {
-            ets.get(i).setText(text.charAt(i));
+            ets.get(i).setText(String.valueOf(text.charAt(i)));
         }
+    }
+
+    public String getText() {
+        StringBuilder text = new StringBuilder();
+        for (int i = 0; i < numBoxes; i++) {
+            text.append(ets.get(i).getText());
+        }
+        return text.toString();
     }
 
     public void setBoxETListener(BoxETListener boxETListener) {
