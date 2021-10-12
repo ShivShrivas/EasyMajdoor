@@ -15,6 +15,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import timber.log.Timber;
+
 public class AuthRepository {
     public enum Errors {
         NOT_AUTHENTICATED,

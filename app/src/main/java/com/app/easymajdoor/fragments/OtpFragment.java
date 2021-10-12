@@ -187,6 +187,8 @@ public class OtpFragment extends Fragment {
             }
             Timber.d("onVerificationCompleted:%s", credential);
             addDetailsToDb();
+            countDownTimer.cancel();
+            countDownTimer.onFinish();
             message.showSnackBar(R.string.instant_verification);
         }
 
