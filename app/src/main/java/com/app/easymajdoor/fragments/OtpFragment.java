@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.app.easymajdoor.MapsActivity;
 import com.app.easymajdoor.R;
 import com.app.easymajdoor.activities.MainActivity;
 import com.app.easymajdoor.auth.AuthRepository;
@@ -157,7 +158,7 @@ public class OtpFragment extends Fragment {
         authRepository.addDetails(phNo).observe(getViewLifecycleOwner(), status -> {
             if (status.status == Status.SUCCESS) {
                 Timber.d("wtf");
-                startActivity(new Intent(requireContext(), MainActivity.class));
+                startActivity(new Intent(requireContext(), MapsActivity.class));
                 requireActivity().finish();
             } else if (status.error == AuthRepository.Errors.PHONE_NO_ALREADY_EXISTS) {
                 message.showSnackBar(R.string.number_already_taken);

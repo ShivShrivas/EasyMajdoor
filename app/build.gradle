@@ -17,15 +17,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        debug {
-            storeFile file('../debug.keystore')
-            storePassword "android"
-            keyAlias "androiddebugkey"
-            keyPassword "android"
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -45,7 +36,7 @@ android {
 
 dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.2'
-    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
 
     //Navigation

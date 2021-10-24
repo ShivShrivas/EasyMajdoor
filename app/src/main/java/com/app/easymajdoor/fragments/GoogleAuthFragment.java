@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.app.easymajdoor.MapsActivity;
 import com.app.easymajdoor.R;
 import com.app.easymajdoor.activities.MainActivity;
 import com.app.easymajdoor.databinding.FragmentGoogleAuthBinding;
@@ -92,7 +93,7 @@ public class GoogleAuthFragment extends Fragment {
         authStatus.observe(getViewLifecycleOwner(), auth -> {
             if (auth.data == AuthStatus.AUTH_PH_NO) {
 
-                startActivity(new Intent(requireContext(), MainActivity.class));
+                startActivity(new Intent(requireContext(), MapsActivity.class));
                 requireActivity().finish();
             } else if (auth.data == AuthStatus.AUTH) {
                 navigator.navigate(GoogleAuthFragmentDirections.actionGoogleAuthFragmentToPhNoFragment());
