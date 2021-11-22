@@ -30,5 +30,10 @@
     <string name="sending_otp">Sending OTP</string>
     <string name="creating_account">Creating Account</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="nav_open">open</string>
+    <string name="nav_close">close</string>
+    <string name="my_account">my account</string>
+    <string name="settings">setting</string>
+    <string name="logout">logout</string>
 
 </resources>

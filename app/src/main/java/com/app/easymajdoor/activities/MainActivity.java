@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             FirebaseAuth.getInstance().signOut();
             GoogleSignIn.getClient(this, new GoogleSignInOptions.Builder(
                     GoogleSignInOptions.DEFAULT_SIGN_IN).build()).signOut();
-            startActivity(new Intent(this, AuthActivity.class));
+            startActivity(new Intent(this, PhoneNumberAuth.class));
             overridePendingTransition(android.R.anim.slide_in_left,
                     android.R.anim.slide_out_right);
             finish();
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        checkAuthAndNavigate();
+
     }
 
     private void checkAuthAndNavigate() {

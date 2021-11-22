@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/my_profile"
+        android:title="My Profile"
+        android:icon="@drawable/ic_person_outline"/>
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/your_booking"
+        android:title="Your Booking"
+        android:icon="@drawable/aboutus"/>
+
+    <item android:id="@+id/paymemt"
+        android:title="Payment"
+        android:icon="@drawable/payment_icon"/>
+
+    <item android:id="@+id/become_a_mazdoor"
+        android:title="Become a Mazdoor"
+        android:icon="@drawable/mazdooricon"/>
+
+
+    <item
+        android:id="@+id/refer_and_earn"
+        android:title="Refer and Earn"
+        android:icon="@drawable/ic_ri_share_forward_line"/>
+
+    <item
+        android:id="@+id/support"
+        android:title="Support"
+        android:icon="@drawable/ic_handshake" />
+
+    <item android:id="@+id/about"
+        android:title="About"
+        android:icon="@drawable/about_us"/>
+
+    <item android:id="@+id/logout"
+        android:title="Logout"
+        android:icon="@drawable/logout"/>
+
+
+</menu>
